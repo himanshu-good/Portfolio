@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio</title>
+    <meta name="description" content="Professional portfolio showcasing projects, skills and contact information." />
+    <link rel="stylesheet" href="style.css">
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader" aria-hidden="true">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Top navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#home" aria-label="Go to home">
+                <div class="logo">Hj</div>
+                <div class="brand-text">
+                    <div class="brand-name">Himanshu jaiswal...</div>
+                    <div class="brand-role">Frontend Developer</div>
+                </div>
+            </a>
+
+            <nav class="top-nav" aria-label="Primary">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <button id="themeToggle" class="icon-btn" aria-pressed="false" title="Toggle theme">🌙</button>
+                <button id="menuToggle" class="icon-btn mobile-only" aria-expanded="false"
+                    aria-controls="mobileMenu">☰</button>
+            </nav>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+            <a href="#projects" class="mobile-link">Projects</a>
+            <a href="#skills" class="mobile-link">Skills</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <!-- Hero -->
+        <section id="home" class="hero fade-in">
+            <div class="container hero-inner">
+                <div class="hero-left">
+                    <p class="muted">Hello, my name is </p>
+                    <h1 class="hero-title">Himanshu Jaiswal<span class="accent">.</span></h1>
+                    <p class="hero-sub">I build modern, accessible and high-performance web interfaces — HTML, CSS,
+                        JavaScript (React) &amp; UX.</p>
+
+                    <div class="hero-ctas">
+                        <a class="btn btn-primary" href="#projects">View Projects</a>
+                        <a class="btn btn-ghost" href="#contact">Hire me</a>
+                    </div>
+
+                    <ul class="quick-links">
+                        <li><a href="c:\Users\user\Downloads\himanshu-frontend developer (1).pdf" target="_blank" rel="noopener">Resume</a></li>
+                        <li><a href="https://github.com/himanshu-good" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/himanshu-jaiswal-" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+
+                <aside class="hero-right">
+                    <div class="card contact-card">
+                        <div class="contact-meta">
+                            <div class="muted">Contact</div>
+                            <div class="contact-email">himanshucode12@gmail.com</div>
+                        </div>
+                        <div class="contact-actions">
+                            <a class="btn btn-ghost" href="#contact">Message</a>
+                            <a class="btn btn-ghost" href="#projects">Portfolio</a>
+                        </div>
+                        <div class="stats">
+                            <div>
+                                <div class="stat-num" data-target="5">0</div>
+                                <div class="muted small">Projects</div>
+                            </div>
+                            <div>
+                                <div class="stat-num" data-target="0">1</div>
+                                <div class="muted small">Years</div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section fade-in">
+            <div class="container about-grid">
+                <div class="about-card">
+                    <h2>About me</h2>
+                    <p>I’m a frontend developer focusing on building fast, accessible and responsive web apps. I enjoy
+                        turning complex problems into simple, beautiful, and intuitive interfaces. I like to learn new
+                        tools and improve performance and UX.</p>
+                    <ul class="muted small">
+                        <li>🔧 Building user-friendly interfaces</li>
+                        <li>⚡️ Performance & Lighthouse optimizations</li>
+                        <li>♿ Accessibility-first approach</li>
+                    </ul>
+                </div>
+
+                <div class="about-stats">
+                    <div class="card">
+                        <h3>Experience ( Fresher ) </h3>
+                        <p class="muted">Hands-on experience in building responsive websites and projects using HTML, CSS, and JavaScript.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Education</h3>
+                        <p class="muted">IGNOU University — BCA</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Skills -->
+        <section id="skills" class="section alt fade-in">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-pill">HTML5</div>
+                    <div class="skill-pill">CSS3 (Flexbox, Grid)</div>
+                    <div class="skill-pill">JavaScript (ES6+)</div>
+                    <div class="skill-pill">React</div>
+                    <div class="skill-pill">Node.js</div>
+                    <div class="skill-pill">Tailwind CSS</div>
+                    <div class="skill-pill">Git & GitHub</div>
+                    <div class="skill-pill">Bootstrap</div>
+                    <div class="skill-pill">VS Code</div>
+                    <div class="skill-pill">Responsive Design</div>
+                    <div class="skill-pill">NPM</div>
+                    <div class="skill-pill">Web Design</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Selected Projects</h2>
+                    <div class="filters">
+                        <button class="filter active" data-filter="all">All</button>
+                        <button class="filter" data-filter="web">Web</button>
+                        <button class="filter" data-filter="ui">UI</button>
+                        <button class="filter" data-filter="tool">Tool</button>
+                    </div>
+                </div>
+
+                <div id="projectsGrid" class="projects-grid" aria-live="polite">
+                    <!-- Rendered by script.js -->
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Contact -->
+        <section id="contact" class="section alt fade-in">
+            <div class="container contact-area">
+                <div class="contact-left card">
+                    <h2>Get in touch</h2>
+                    <p class="muted">I’m available for freelance and full-time roles. Send me a message and I’ll reply
+                        as soon as I can.</p>
+                    <div class="contact-info muted">
+                        <div><strong>Email:</strong> himanshucode12@gmail.com</div>
+                        <div><strong>Location:</strong> Faridabad Haryana, India </div>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="contact-form card" aria-label="Contact form">
+                    <label>
+                        <span class="small muted">Your name</span>
+                        <input name="name" required placeholder="Your name">
+                    </label>
+                    <label>
+                        <span class="small muted">Email</span>
+                        <input name="email" type="email" required placeholder="you@example.com">
+                    </label>
+                    <label class="full">
+                        <span class="small muted">Message</span>
+                        <textarea name="message" required placeholder="How can I help?"></textarea>
+                    </label>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Send message</button>
+                        <button type="reset" class="btn btn-ghost">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>© <span id="year"></span> Himanshu jaiswal...</div>
+            <div class="muted">Built with HTML, CSS & JS</div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-panel">
+            <button class="modal-close icon-btn" aria-label="Close project">✕</button>
+            <div class="modal-body">
+                <h3 id="modalTitle">Project Title</h3>
+                <div id="modalSubtitle" class="muted small"></div>
+                <div id="modalGallery" class="gallery"></div>
+                <p id="modalDesc" class="muted"></p>
+                <div class="modal-actions">
+                    <a id="modalLive" class="btn btn-primary" href="#" target="_blank" rel="noopener">Live site</a>
+                    <a id="modalCode" class="btn btn-ghost" href="#" target="_blank" rel="noopener">Source</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

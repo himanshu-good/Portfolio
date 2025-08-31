@@ -1,0 +1,159 @@
+/* ============================
+   style.css — Modern Portfolio
+   ============================ */
+
+/* ---------- Variables & Reset ---------- */
+:root{
+  --bg: #0b1220;
+  --bg-2: #06101a;
+  --card: rgba(255,255,255,0.03);
+  --glass: rgba(255,255,255,0.03);
+  --muted: #9aa4b2;
+  --accent-a: #6ee7b7;
+  --accent-b: #60a5fa;
+  --text: #e6eef6;
+  --radius: 12px;
+  --container: 1200px;
+  --glass-border: rgba(255,255,255,0.06);
+  --shadow: 0 12px 30px rgba(2,6,23,0.6);
+  --transition: 240ms cubic-bezier(.2,.9,.3,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background: linear-gradient(180deg,#030416 0%,var(--bg) 70%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  overflow-x:hidden;
+}
+
+/* ---------- Preloader ---------- */
+#preloader{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);z-index:9999;transition:opacity .3s ease;
+}
+#preloader .spinner{
+  width:64px;height:64px;border-radius:50%;border:6px solid rgba(255,255,255,0.06);border-top-color:var(--accent-a);animation:spin 1s linear infinite;
+}
+#preloader.hidden{opacity:0;pointer-events:none;visibility:hidden}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- Layout helpers ---------- */
+.container{max-width:var(--container);margin:0 auto;padding:28px}
+.header-inner, .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:14px;z-index:60;padding:0 12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#062426;background:linear-gradient(135deg,var(--accent-a),var(--accent-b));box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+.brand-name{font-weight:800}
+.brand-role{font-size:13px;color:var(--muted)}
+.header-inner{padding:8px 6px;background:transparent}
+.top-nav{display:flex;align-items:center;gap:12px}
+.top-nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+.top-nav a:hover{background:var(--glass);color:var(--text)}
+.icon-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:10px;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center}
+.mobile-only{display:none}
+
+/* Mobile menu (hidden by default) */
+.mobile-menu{display:none;flex-direction:column;gap:6px;padding:12px}
+.mobile-menu a{padding:10px;border-radius:8px;color:var(--muted);text-decoration:none}
+
+/* ---------- Hero ---------- */
+.hero{padding:44px 0}
+.hero-inner{display:flex;gap:28px;align-items:start}
+.hero-left{flex:1}
+.hero-right{width:320px}
+.muted{color:var(--muted)}
+.hero-title{font-size:40px;line-height:1.05;margin:10px 0}
+.accent{color:var(--accent-a);margin-left:6px}
+.hero-sub{max-width:640px;margin-top:10px;color:var(--muted)}
+.hero-ctas{margin-top:18px;display:flex;gap:12px}
+.quick-links{margin-top:18px;display:flex;gap:10px;list-style:none}
+.quick-links a{color:var(--muted);text-decoration:none;font-weight:600}
+
+/* Small cards */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));border-radius:12px;padding:16px;border:1px solid var(--glass-border);box-shadow:var(--shadow)}
+.contact-card{display:flex;flex-direction:column;gap:12px}
+.contact-email{font-weight:700;color:var(--text)}
+.stats{display:flex;gap:12px;margin-top:10px}
+.stat-num{font-size:20px;font-weight:800;color:var(--accent-b)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;font-weight:700;transition:all var(--transition)}
+.btn-primary{background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:#042022}
+.btn-primary:hover{transform:translateY(-3px)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+.btn-ghost:hover{background:rgba(255,255,255,0.02)}
+
+/* ---------- Sections ---------- */
+.section{padding:48px 0}
+.section.alt{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent 40%)}
+.section h2{font-size:26px;margin-bottom:12px}
+
+/* ---------- Projects ---------- */
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+.filters{display:flex;gap:8px}
+.filter{background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);padding:8px 12px;border-radius:999px;cursor:pointer}
+.filter.active{background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:#042022}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));padding:14px;border-radius:12px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:transform .25s ease, box-shadow .25s ease}
+.project-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.6)}
+.project-media{height:160px;border-radius:10px;overflow:hidden;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+.project-meta{margin-top:12px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.tag{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted)}
+
+/* ---------- Skills ---------- */
+.skills-grid{display:flex;flex-wrap:wrap;gap:10px}
+.skill-pill{background:linear-gradient(90deg,var(--accent-b),var(--accent-a));padding:8px 12px;border-radius:999px;color:#05272a;font-weight:700}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.about-card p{color:var(--muted)}
+
+/* ---------- Contact form ---------- */
+.contact-area{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.contact-form input, .contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);outline:none}
+.contact-form label{display:block;margin-bottom:10px}
+.contact-form .full{grid-column:1/-1}
+.form-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
+
+/* ---------- Footer ---------- */
+.site-footer{padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:48px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+
+/* ---------- Modal ---------- */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:100}
+.modal.open{display:flex}
+.modal-panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));border-radius:12px;padding:18px;max-width:900px;width:92%;position:relative;border:1px solid var(--glass-border)}
+.modal-close{position:absolute;right:12px;top:12px;background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:18px}
+.gallery{display:flex;gap:8px;margin:12px 0;overflow:auto}
+.gallery img{height:160px;border-radius:8px;cursor:pointer;object-fit:cover;display:block}
+
+/* ---------- Animations ---------- */
+.fade-in{opacity:0;transform:translateY(10px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:none}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1000px){
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .hero-inner{flex-direction:column}
+  .hero-right{width:100%}
+  .contact-area{grid-template-columns:1fr}
+  .mobile-only{display:inline-flex}
+  .top-nav a{display:none}
+  .mobile-menu{display:none}
+  .projects-grid{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .brand-text{display:none}
+  .logo{width:44px;height:44px}
+  .container{padding:16px}
+  .hero-title{font-size:28px}
+  .section{padding:30px 16px}
+}
