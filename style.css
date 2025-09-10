@@ -78,7 +78,8 @@ body{
 /* Small cards */
 .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));border-radius:12px;padding:16px;border:1px solid var(--glass-border);box-shadow:var(--shadow)}
 .contact-card{display:flex;flex-direction:column;gap:12px}
-.contact-email{font-weight:700;color:var(--text)}
+.contact-email{font-weight:700; }
+.contact-email a{ text-decoration: none;color:var(--text);cursor: pointer;}
 .stats{display:flex;gap:12px;margin-top:10px}
 .stat-num{font-size:20px;font-weight:800;color:var(--accent-b)}
 

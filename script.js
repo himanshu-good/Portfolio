@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenu.style.display = open ? 'none' : 'flex';
       mobileMenu.setAttribute('aria-hidden', String(open));
     });
-    // close on mobile link click
     document.querySelectorAll('.mobile-link').forEach(a => a.addEventListener('click', () => {
       mobileMenu.style.display = 'none';
       menuToggle.setAttribute('aria-expanded', 'false');
@@ -50,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (el) {
         e.preventDefault();
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // close mobile menu after navigation
         if (mobileMenu && window.getComputedStyle(mobileMenu).display === 'flex') {
           mobileMenu.style.display = 'none';
         }
@@ -58,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- SAMPLE PROJECTS DATA (replace with real projects) ---------- */
+  /* ---------- SAMPLE PROJECTS DATA ---------- */
   const projects = [
     {
       id: 'p1',
@@ -67,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       desc: 'A modern portfolio built with performance and accessibility in mind. Responsive, fast and lightweight.',
       tags: ['web','ui'],
       images: [
-      'https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2023/03/How-to-Make-a-Portfolio-in-8-Steps-Tips-to-Attract-More-Clients-1536x894-1-1024x596.png', placeholderImg('UI')],
+        'https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2023/03/How-to-Make-a-Portfolio-in-8-Steps-Tips-to-Attract-More-Clients-1536x894-1-1024x596.png', placeholderImg('UI')],
       live: '#',
       code: '#'
     },
@@ -77,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       subtitle: 'Modern look and animation effects.',
       desc: 'modern landing page with 🔄 synced vertical & horizontal scrolling, built using 🏗️ HTML 🖌️ CSS ⚡ JavaScript. 🚀 Smooth, 🎭 interactive, and 🎨 creative!.',
       tags: ['web','tool'],
-      images: ['https://i0.wp.com/www.authormedia.com/wp-content/uploads/2019/08/Depositphotos_87993688_xl-2015-scaled.jpg?fit=2560%2C1608&ssl=1 ', placeholderImg('Product')],
+      images: ['https://i0.wp.com/www.authormedia.com/wp-content/uploads/2019/08/Depositphotos_87993688_xl-2015-scaled.jpg?fit=2560%2C1608&ssl=1', placeholderImg('Product')],
       live: 'https://himanshu-good.github.io/Landing-page-culture-website-/',
       code: '#'
     },
@@ -91,19 +89,18 @@ document.addEventListener('DOMContentLoaded', () => {
       live: 'https://himanshu-good.github.io/my-portfolio/',
       code: '#'
     },
-     {
+    {
       id: 'p4',
       title: 'Stone-Paper-Scissors-Dynamic-Game',
       subtitle: 'Playing with computer',
       desc: 'A fun Stone, Paper, Scissors game 🎮 built with HTML, CSS & JavaScript. Features ⏳ game timer, 📊 real-time score tracking, 🔄 dynamic updates, and 🎉 automatic result display. Play & enjoy! 🚀.',
       tags: ['tool','ui'],
       images: ['https://www.shutterstock.com/image-vector/rock-paper-scissors-hand-sign-260nw-1996509359.jpg', placeholderImg('Players')],
-      live: ' https://himanshu-good.github.io/Stone-Paper-Scissors-Dynamic-Game/',
+      live: 'https://himanshu-good.github.io/Stone-Paper-Scissors-Dynamic-Game/',
       code: '#'
     }
   ];
 
-  // Helper: create SVG placeholder dataURI
   function placeholderImg(text) {
     const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'><defs><linearGradient id='g' x1='0' x2='1'><stop offset='0' stop-color='#6ee7b7'/><stop offset='1' stop-color='#60a5fa'/></linearGradient></defs><rect width='100%' height='100%' fill='url(#g)' /><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Inter, Arial' font-size='48' fill='rgba(255,255,255,0.95)'>${text}</text></svg>`;
     return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
@@ -131,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openModalById(p.id); });
       grid.appendChild(card);
 
-      // staggered reveal
       card.style.opacity = 0;
       card.style.transform = 'translateY(12px)';
       setTimeout(()=> {
@@ -183,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    // focus
     setTimeout(()=> modalClose && modalClose.focus(), 20);
   }
 
@@ -209,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 20);
   });
 
-  /* ---------- CONTACT FORM (mailto fallback) ---------- */
+  /* ---------- CONTACT FORM ---------- */
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -221,12 +216,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!email || !message) { alert('Please fill required fields.'); return; }
       const subject = `Portfolio contact from ${name || email}`;
       const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-      const mailto = `mailto:youremail@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailto = `mailto:himanshucode12@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailto;
     });
   }
 
-  /* ---------- Accessibility: simple focus trap while modal open ---------- */
+  /* ---------- Accessibility ---------- */
   document.addEventListener('focus', (e) => {
     if (modal.classList.contains('open') && !modal.contains(e.target)) {
       e.stopPropagation();
@@ -234,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, true);
 
-  /* ---------- Utility: expose to console to bulk add projects ---------- */
+  /* ---------- Utility ---------- */
   window.addProjects = function(json){
     try {
       const arr = (typeof json === 'string') ? JSON.parse(json) : json;
@@ -244,4 +239,4 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (err) { console.error('Invalid JSON for addProjects', err); }
   };
 
-}); // DOMContentLoaded end
+});
